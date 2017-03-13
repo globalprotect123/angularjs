@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app='ControllerAsApp'>
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.js"></script>
+    <script src="factory.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Custom Service through a factory</title>
+  </head>
+  <body>
+    <h1>Custom Service Through A Factory</h1>
+    <div id="list1" ng-controller='ShoppingListController1 as list1'>
+      <h2>Shopping List 1</h2>
+      <input type="text" ng-model="list1.itemName" placeholder="item name">
+      <input type="text" ng-model="list1.itemQuantity" placeholder="quantity">
+      <button ng-click="list1.addItem();">Add Item to Shopping List 1</button>
+      <ol>
+        <li ng-repeat="item in list1.items">
+          {{ item.quantity }} bags of {{ item.name }}
+        </li>
+      </ol>
+      <div class="error">Error: {{ list1.errorMessage }}</div>
+    </div>
+
+    <div id="list2" ng-controller='ShoppingListController2 as list2'>
+      <h2>Shopping List 2</h2>
+      <input type="text" ng-model="list2.itemName" placeholder="item name">
+      <input type="text" ng-model="list2.itemQuantity" placeholder="quantity">
+      <button ng-click="list2.addItem();">Add Item to Shopping List 2</button>
+      <ol>
+        <li ng-repeat="item in list2.items">
+          {{ item.quantity }} bags of {{ item.name }}
+        </li>
+      </ol>
+      <div class="error">Error: {{ list2.errorMessage }}</div>
+    </div>
+  </body>
+</html>
