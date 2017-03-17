@@ -1,0 +1,8 @@
+<h3>{{sldc.title}}</h3>
+<ol>
+  <li ng-repeat="item in sldc.items">
+    {{ item.quantity }} bags of {{ item.name }}
+    <button ng-click="sldc.onRemove({index:$index});">Remove Item</button>
+  </li>
+</ol>
+<div class="error" ng-if="sldc.cookiesInList()">COOKIES DETECTED!</div>
