@@ -2,14 +2,14 @@
 <html ng-app='DirectiveApp'>
   <head>
     <meta charset="utf-8">
-    <script src="jquery-3.2.0.js"></script>
-    <script src="angular.js"></script>
-    <script src="directive.js"></script>
+    <script src="../script/jquery-3.2.0.js"></script>
+    <script src="../script/angular.js"></script>
+    <script src="directive2.js"></script>
     <link rel="stylesheet" href="style.css">
-    <title>Directive</title>
+    <title>Shopping List With Components</title>
   </head>
   <body>
-    <h1>Directive</h1>
+    <h1>Shopping List With Components</h1>
     <div id="list1" ng-controller='ShoppingListController1 as list1'>
       <input type="text" ng-model="list1.itemName" placeholder="item name">
       <input type="text" ng-model="list1.itemQuantity" placeholder="quantity">
@@ -17,7 +17,7 @@
       <span>{{ list1.lastRemoved }}</span>
       <shopping-list
         items="list1.items"
-        title={{list1.title}}
+        title="{{list1.title}}"
         on-remove="list1.removeItem(index)">
       </shopping-list>
     </div>
